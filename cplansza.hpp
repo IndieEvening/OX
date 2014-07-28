@@ -6,12 +6,15 @@
 class CPlansza
 {
 private:
-    CGracz* gracz;
+    CGracz* wsk_gracz1;
+    CGracz* wsk_gracz2;
+    CGracz* wsk_akt;
     STAN_POL plansza[3][3];
     int s[8] = {0};
 
 public:
     CPlansza();
+    CPlansza(CGracz& gracz1, CGracz& gracz2);
     ~CPlansza();
     void postaw_znak(int wiersz, int kolumna);
     void const wyswietl();

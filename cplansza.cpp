@@ -2,8 +2,21 @@
 
 CPlansza::CPlansza()
 {
+    /*TWORZE PLANSZE Z PUSTYMI POLAMI*/
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            plansza[i][j] = P_PUSTE;
+        }
+    }
+}
+
+CPlansza::CPlansza(CGracz& gracz1, CGracz& gracz2)
+{
     /*TWORZE DWÓCH GRACZY*/
-     gracz=new CGracz("Przemek");
+    wsk_gracz1 = &gracz1;
+    wsk_gracz2 = &gracz2;
     /*TWORZE PLANSZE Z PUSTYMI POLAMI*/
     for (int i = 0; i < 3; i++)
     {
@@ -16,6 +29,7 @@ CPlansza::CPlansza()
 
 CPlansza::~CPlansza()
 {
+
 }
 
 void const CPlansza::wyswietl()
@@ -33,7 +47,8 @@ void const CPlansza::wyswietl()
 
 void CPlansza::postaw_znak(int wiersz, int kolumna)
 {
-        plansza[wiersz][kolumna] = gracz->pokaz_znak() ;
+    //wsk_akt= wsk_gracz1;
+    plansza[wiersz][kolumna] = wsk_gracz1->pokaz_znak() ;
 }
 
 void CPlansza::sprawdz_stan_planszy()

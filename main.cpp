@@ -1,7 +1,5 @@
 #include <QCoreApplication>
 #include "cplansza.hpp"
-#include "cgracz.hpp"
-
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +11,9 @@ int main(int argc, char *argv[])
     }
     delete gra;*/
     try{
-    CPlansza plansza;
+    CGracz gracz1("Przemek");
+    CGracz gracz2("Monika");
+    CPlansza plansza(gracz1, gracz2);
     plansza.wyswietl();
     plansza.postaw_znak(1,1);
     system("clear");

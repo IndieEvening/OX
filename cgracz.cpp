@@ -8,6 +8,11 @@ CGracz::CGracz(std::string imie):
 
 }
 
+CGracz::~CGracz()
+{
+
+}
+
 const void CGracz::pokaz_imie()
 {
     std::cout << this->imie << std::endl;
