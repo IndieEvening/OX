@@ -8,9 +8,9 @@ private:
     std::string imie;
     ZNAK znak;
 public:
-    CGracz(std::string);
+    CGracz(std::string, ZNAK);
     ~CGracz();
-    STAN_POL const pokaz_znak();
+    STAN_POL const p_znak();
     void const pokaz_imie();
 };
 

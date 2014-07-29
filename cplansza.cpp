@@ -45,10 +45,52 @@ void const CPlansza::wyswietl()
     }
 }
 
-void CPlansza::postaw_znak(int wiersz, int kolumna)
+void CPlansza::postaw_znak(int wiersz, int kolumna, STAN_POL znak)
 {
     //wsk_akt= wsk_gracz1;
-    plansza[wiersz][kolumna] = wsk_gracz1->pokaz_znak() ;
+    plansza[wiersz][kolumna] = znak;//wsk_gracz1->pokaz_znak() ;
+}
+
+void CPlansza::postaw_znak(CPlansza& plansza, CGracz& gracz)
+{
+    /*tutaj chce wywolywac metode postaw_znak(int,int,STAN_POL)*/
+    //plansza.postaw_znak(1,1,gracz.p_znak()); // ok to działa
+    /*To teraz wystarczy jebnac se switcha i pytac tutaj
+     * w jakim polu chce dany gracz postawic znak...no to spróbujmy*/
+    /***************************************************************/
+    int c = 0 ;
+    std::cout << "Gdzie chcesz postawić znak?" << std::endl;
+    std::cin >> c;
+
+    switch(c){
+    case 1:
+        plansza.postaw_znak(0,0,gracz.p_znak());
+        break;
+    case 2:
+        plansza.postaw_znak(0,1,gracz.p_znak());
+        break;
+    case 3:
+        plansza.postaw_znak(0,2,gracz.p_znak());
+        break;
+    case 4:
+        plansza.postaw_znak(1,0,gracz.p_znak());
+        break;
+    case 5:
+        plansza.postaw_znak(1,1,gracz.p_znak());
+        break;
+    case 6:
+        plansza.postaw_znak(1,2,gracz.p_znak());
+        break;
+    case 7:
+        plansza.postaw_znak(2,0,gracz.p_znak());
+        break;
+    case 8:
+        plansza.postaw_znak(2,1,gracz.p_znak());
+        break;
+    case 9:
+        plansza.postaw_znak(2,2,gracz.p_znak());
+        break;
+    }
 }
 
 void CPlansza::sprawdz_stan_planszy()

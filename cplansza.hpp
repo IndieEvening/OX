@@ -16,7 +16,8 @@ public:
     CPlansza();
     CPlansza(CGracz& gracz1, CGracz& gracz2);
     ~CPlansza();
-    void postaw_znak(int wiersz, int kolumna);
+    void postaw_znak(int wiersz, int kolumna, STAN_POL kto_stawia_znak);
+    void postaw_znak(CPlansza&, CGracz&);
     void const wyswietl();
 
     void sprawdz_stan_planszy();

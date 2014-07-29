@@ -1,9 +1,9 @@
 #include "cgracz.hpp"
 
 
-CGracz::CGracz(std::string imie):
+CGracz::CGracz(std::string imie, ZNAK znak_gracza):
      imie(imie),
-     znak(KRZYZYK)
+     znak(znak_gracza)
 {
 
 }
@@ -18,7 +18,7 @@ const void CGracz::pokaz_imie()
     std::cout << this->imie << std::endl;
 }
 
-STAN_POL const CGracz::pokaz_znak()
+STAN_POL const CGracz::p_znak()
 {
     if (znak == KOLKO)
         return P_KOLKO;
